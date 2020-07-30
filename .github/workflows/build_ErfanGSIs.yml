@@ -9,7 +9,7 @@ on:
     
 env:
   ROM_URL: https://download.meizu.com/Firmware/Flyme/16s_Pro/8.20.7.27/cn_daily/20200727002123/bcff7ab2/update.zip
-  ROM_NAME: Flyme
+  ROM_NAME: OxygenOS
   ZIP_NAME: Flyme-Helios
   TZ: Middle-East/Kuwait
 
@@ -38,9 +38,18 @@ jobs:
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
-       
+       - name: downloading the firmware
+         run: curl -O https://oxygenos.oneplus.net/OnePlus7TOxygen_14.O.13_OTA_013_all_2005192145_5ecebc1d9bde4987.zip
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: sudo ./ErfanGSIs/merge.sh $ROM_NAME ErfanGSIs/OnePlus7TOxygen_14.O.13_OTA_013_all_2005192145_5ecebc1d9bde4987.zip
+      
+       - name: making dir
+         run: sudo mkdir oos
+       
+       - name: mounting the system
+         run: sudo mount ErfanGSIs/cache/system.img oos
+       - name: making the gsi
+         run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
        
        - name: Zipping Aonly
          run: |
