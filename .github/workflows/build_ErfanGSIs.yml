@@ -31,6 +31,7 @@ jobs:
             sudo -E apt-get -qq install python
             sudo -E apt-get -qq install simg2img
             sudo -E apt-get -qq install python-protobuf
+            python --version
 
        
        - name: processing ErfanGSIs code 
