@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://download.meizu.com/Firmware/Flyme/16s_Pro/8.20.7.27/cn_daily/20200727002123/bcff7ab2/update.zip
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
   ROM_NAME: OxygenOS
-  ZIP_NAME: Flyme-Helios
+  ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
 
 jobs:
@@ -39,9 +39,9 @@ jobs:
               cd ErfanGSIs
               sudo bash setup.sh
        - name: downloading the firmware
-         run: curl -O https://oxygenos.oneplus.net/OnePlus7TOxygen_14.O.13_OTA_013_all_2005192145_5ecebc1d9bde4987.zip
+         run: curl -O https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/merge.sh $ROM_NAME ErfanGSIs/OnePlus7TOxygen_14.O.13_OTA_013_all_2005192145_5ecebc1d9bde4987.zip
+         run: sudo ./ErfanGSIs/merge.sh $ROM_NAME ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
       
        - name: making dir
          run: sudo mkdir oos
