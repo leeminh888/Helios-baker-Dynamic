@@ -35,7 +35,7 @@ jobs:
 
        
        - name: processing ErfanGSIs code 
-         run: git clone --recurse-submodules https://github.com/JamieHoSzeYui/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/123ridhin/ErfanGSIs.git
        
        - name: Setting up requirements and permissions
          run: |
