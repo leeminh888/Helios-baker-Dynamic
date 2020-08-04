@@ -44,7 +44,7 @@ jobs:
               sudo bash setup.sh
                         
        - name: downloading the firmware
-         run: curl -O https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip ErfanGSIs
+         run: sudo wget https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip -P /ErfanGSIs
        - name: removing system
          run: sudo umount system && sudo rm -r system
        - name: Download Stock Rom & Generate GSI
