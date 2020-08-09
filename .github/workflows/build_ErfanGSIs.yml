@@ -35,7 +35,7 @@ jobs:
 
        
        - name: processing ErfanGSIs code 
-         run: git clone --recurse-submodules https://github.com/123ridhin/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/adamayyad/ErfanGSIs.git
        
        - name: Setting up requirements and permissions
          run: |
@@ -48,15 +48,15 @@ jobs:
       
      
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/merge.sh $ROM_NAME ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
+         run: sudo ./ErfanGSIs/merge.sh OxygenOS /ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
       
        - name: making dir
          run: sudo mkdir oos
        
        - name: mounting the system
-         run: sudo mount ErfanGSIs/cache/system.img oos
+         run: sudo mount /ErfanGSIs/cache/system.img oos
        - name: making the gsi
-         run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
+         run: sudo ./ErfanGSIs/url2GSI.sh /ErfanGSIs/cache/oos $ROM_NAME
        
        - name: Zipping Aonly
          run: |
