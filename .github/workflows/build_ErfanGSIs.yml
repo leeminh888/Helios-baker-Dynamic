@@ -48,7 +48,7 @@ jobs:
       
      
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/merge.sh OxygenOS /ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
+         run: sudo ./ErfanGSIs/makedynamic.sh OxygenOS /ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
       
        - name: making dir
          run: sudo mkdir oos
