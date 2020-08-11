@@ -44,18 +44,18 @@ jobs:
               sudo bash setup.sh
                         
        - name: downloading the firmware
-         run: sudo wget https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip -P ErfanGSIs
+         run: sudo wget $ROM_URL -P ErfanGSIs
       
      
-       - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/makedynamic.sh OxygenOS ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
+       - name: using zip2img.sh 
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/walleye-qq3a.200805.001-factory-a3367352.zip
       
-       - name: making dir
-         run: sudo mkdir oos
+       - name: mounting the system.img
+         run: cd ErfanGSIs/cache && sudo mkdir pixel && sudo mount system.img pixel 
        
-       - name: mounting the system
-         run: sudo mount /ErfanGSIs/cache/system.img oos
-       - name: making the gsi
+       - name: using make.sh 
+         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/pixel $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/pixel $ROM_NAME Aonly
+       - name: waitbuddy
          run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
        
        - name: Zipping Aonly
