@@ -9,8 +9,8 @@ on:
     
 env:
   ROM_URL: https://download.meizu.com/Firmware/Flyme/16T/8.20.8.10/cn_daily/20200810003508/40bff140/update.zip
-  ROM_NAME: Pixel
-  ZIP_NAME: Pixel-Helios
+  ROM_NAME: Flyme
+  ZIP_NAME: Flyme-Helios
   TZ: Middle-East/Kuwait
 
 jobs:
@@ -50,8 +50,12 @@ jobs:
        - name: using zip2img.sh 
          run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/update.zip
       
-       - name: mounting the system.img
-         run: cd ErfanGSIs/cache && sudo mkdir pixel && sudo mount system.img Flyme 
+       - name: moving to dir
+         run: cd ErfanGSIs/cache
+       - name: making mount dir
+         run: sudo mkdir ErfanGSIs/cache/pixel
+       - name: mountin the sys.img
+         run: sudo mount ErfanGSIs/cache/system.img ErfanGSIs/cache/pixel    
        
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/pixel $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/pixel $ROM_NAME Aonly
