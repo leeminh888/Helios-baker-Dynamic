@@ -44,11 +44,11 @@ jobs:
               sudo bash setup.sh
                         
        - name: downloading the firmware
-         run: sudo wget https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip -P /ErfanGSIs
+         run: sudo wget https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip -P ErfanGSIs
       
      
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/makedynamic.sh OxygenOS /ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
+         run: sudo ./ErfanGSIs/makedynamic.sh OxygenOS ErfanGSIs/OnePlus7ProOxygen_21.P.27_OTA_027_all_2005192132_e3185c1907734508.zip
       
        - name: making dir
          run: sudo mkdir oos
@@ -56,7 +56,7 @@ jobs:
        - name: mounting the system
          run: sudo mount /ErfanGSIs/cache/system.img oos
        - name: making the gsi
-         run: sudo ./ErfanGSIs/url2GSI.sh /ErfanGSIs/cache/oos $ROM_NAME
+         run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
        
        - name: Zipping Aonly
          run: |
