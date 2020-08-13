@@ -8,7 +8,7 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.P.28_OTA_028_all_2007240027_d6ca9517c792419d.zip
   ROM_NAME: OxygenOS
   ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7ProOxygen_21.P.28_OTA_028_all_2007240027_d6ca9517c792419d.zip
        - name: cloning ext4extract
          run: git clone https://github.com/erfanoabdi/ext4extract.git 
        - name: moving to ext4extract
@@ -56,7 +56,7 @@ jobs:
        - name: making outputfile
          run: cd ext4extract && sudo mkdir outputfile
        - name: runninng the script
-         run: sudo LC_CTYPE=C.UTF-8 python python3 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
+         run: sudo LC_CTYPE=C.UTF-8 python3 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
        - name: add prep 1
          run: mount -o ro system.img ext4extract/outputfile
        - name: sudo su
