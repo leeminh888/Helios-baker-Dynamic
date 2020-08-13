@@ -56,7 +56,7 @@ jobs:
        - name: making outputfile
          run: cd ext4extract && sudo mkdir outputfile
        - name: runninng the script
-         run: sudo PYTHONIOENCODING=latin1 python3 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
+         run: sudo LC_CTYPE=C.UTF-8 python python3 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
        - name: add prep 1
          run: mount -o ro system.img ext4extract/outputfile
        - name: sudo su
