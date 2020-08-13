@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: http://tdrive.manofuranium.workers.dev/update.zip
-  ROM_NAME: Flyme
-  ZIP_NAME: Flyme-Helios
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TOxygen_14.O.18_OTA_018_all_2007240040_77d64cd32274479a.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/update.zip
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_14.O.18_OTA_018_all_2007240040_77d64cd32274479a.zip
        - name: cloning ext4extract
          run: git clone https://github.com/erfanoabdi/ext4extract.git 
        - name: moving to ext4extract
@@ -56,13 +56,23 @@ jobs:
        - name: making outputfile
          run: cd ext4extract && sudo mkdir outputfile
        - name: runninng the script
-         run: sudo python3 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img     
-       
+         run: sudo python3 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
+       - name: add prep 1
+         run: mount -o ro system.img ext4extract/outputfile
+       - name: sudo su
+         run: sudo su 
+       - name: add prep 2
+         run: cd ext4extract && dd if=/dev/zero of=system_new.img bs=4k count=1048576 && mkfs.ext4 system_new.img && tune2fs -c0 -i0 system_new.img            
+       - name: add pep3
+         run: cd ext4extract && sudo mkdir system_new && mount -o loop system_new.img system_new
+       - name: mountning all
+         run: cd ext4extract && sudo mount - o ro system.img outputfile && mount -o loop system_new.img system_new
+       - name: final command
+         run: cd ext4extract && sudo cp -v -r -p outputfile/* system_new/ && sync  
        - name: using make.sh 
-         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/pixel $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/pixel $ROM_NAME Aonly
-       - name: waitbuddy
-         run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
-       
+         run: sudo ./ErfanGSIs/make.sh ext4extract/system_new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ext4extract/system_new $ROM_NAME Aonly
+         
+     
        - name: Zipping Aonly
          run: |
               mkdir final
