@@ -8,7 +8,7 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip
   ROM_NAME: OxygenOS
   ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
@@ -35,7 +35,7 @@ jobs:
 
        
        - name: processing ErfanGSIs code 
-         run: git clone --recurse-submodules https://github.com/adamayyad/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/123ridhin/ErfanGSIs.git
        
        - name: Setting up requirements and permissions
          run: |
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip
        - name: cloning ext4extract
          run: git clone https://github.com/erfanoabdi/ext4extract.git 
        - name: moving to ext4extract
