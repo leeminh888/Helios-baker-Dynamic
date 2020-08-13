@@ -32,8 +32,6 @@ jobs:
             sudo -E apt-get -qq install simg2img
             sudo -E apt-get -qq install python-protobuf
             python --version
-       - name: installing pthon
-         run: sudo add-apt-repository ppa:fkrull/deadsnakes && sudo apt-get update && sudo apt-get install python3.5
       
        - name: processing ErfanGSIs code 
          run: git clone --recurse-submodules https://github.com/123ridhin/ErfanGSIs.git
@@ -57,7 +55,7 @@ jobs:
        - name: making outputfile
          run: cd ext4extract && sudo mkdir outputfile
        - name: runninng the script
-         run: sudo LC_CTYPE=C.UTF-8 python3.5 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
+         run: sudo LC_CTYPE=C.UTF-8 python2.7 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
        - name: add prep 1
          run: cd ext4extract && ls && sudo mount -o ro system.img outputfile
        - name: sudo su
