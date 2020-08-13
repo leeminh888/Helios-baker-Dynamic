@@ -64,7 +64,7 @@ jobs:
        - name: add prep 2
          run: cd ext4extract && dd if=/dev/zero of=system_new.img bs=4k count=1048576 && mkfs.ext4 system_new.img && tune2fs -c0 -i0 system_new.img            
        - name: add pep3
-         run: cd ext4extract && sudo mkdir system_new && mount -o loop system_new.img system_new
+         run: cd ext4extract && sudo mkdir system_new && sudo mount -o loop system_new.img system_new
        - name: mountning all
          run: cd ext4extract && sudo mount - o ro system.img outputfile && mount -o loop system_new.img system_new
        - name: final command
