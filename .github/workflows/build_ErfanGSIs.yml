@@ -47,7 +47,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: sudo ./ErfanGSIs/dynamic.sh ErfanGSIs/OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip    
+         run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip    
        
        
        - name: using make.sh 
