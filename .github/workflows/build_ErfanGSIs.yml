@@ -31,7 +31,7 @@ jobs:
             sudo -E apt-get -qq install python
             sudo -E apt-get -qq install simg2img
             sudo -E apt-get -qq install python-protobuf
-            python --version
+            python3 --version
       
        - name: processing ErfanGSIs code 
          run: git clone --recurse-submodules https://github.com/123ridhin/ErfanGSIs.git
@@ -47,7 +47,7 @@ jobs:
       
      
        - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip  
        - name: cloning ext4extract
          run: git clone https://github.com/123ridhin/ext4extract.git 
        - name: moving to ext4extract
