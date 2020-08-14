@@ -48,26 +48,26 @@ jobs:
      
        - name: using zip2img.sh 
          run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip  
-       - name: cloning ext4extract
-         run: git clone https://github.com/123ridhin/ext4extract.git 
+       - name: cloning ext4extract in erfangsis
+         run: cd ErfanGSIs && git clone https://github.com/123ridhin/ext4extract.git 
        - name: moving to ext4extract
-         run: sudo mv ErfanGSIs/cache/system.img ext4extract
+         run: cd ErfanGSIs && sudo mv cache/system.img ext4extract
        - name: making outputfile
-         run: cd ext4extract && sudo mkdir outputfile
+         run: cd ErfanGSIs/ext4extract && sudo mkdir outputfile
        - name: runninng the script
-         run: sudo LC_CTYPE=C.UTF-8 python3.6.9 ext4extract/ext4extract.py -D ext4extract/outputfile ext4extract/system.img
+         run: cd ErfanGSIs/ext4extract && sudo python3 ext4extract.py -D outputfile system.img
        - name: add prep 1
-         run: cd ext4extract && ls && sudo mount -o ro system.img outputfile
+         run: cd ErfanGSIs/ext4extract && ls && sudo mount -o ro system.img outputfile
        - name: sudo su
          run: sudo su 
        - name: add prep 2
-         run: cd ext4extract && dd if=/dev/zero of=system_new.img bs=4k count=1048576 && mkfs.ext4 system_new.img && tune2fs -c0 -i0 system_new.img            
+         run: cd ErfanGSIs/ext4extract && dd if=/dev/zero of=system_new.img bs=4k count=1048576 && mkfs.ext4 system_new.img && tune2fs -c0 -i0 system_new.img            
        - name: add pep3
-         run: cd ext4extract && sudo mkdir system_new && sudo mount -o loop system_new.img system_new
+         run: cd ErfanGSIs/ext4extract && sudo mkdir system_new && sudo mount -o loop system_new.img system_new
        - name: final command
-         run: cd ext4extract && sudo cp -v -r -p outputfile/* system_new/ && sync  
+         run: cd ErfanGSIs/ext4extract && sudo cp -v -r -p outputfile/* system_new/ && sync  
        - name: using make.sh 
-         run: sudo ./ErfanGSIs/make.sh ext4extract/system_new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ext4extract/system_new $ROM_NAME Aonly
+         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/ext4extract/system_new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/ext4extract/system_new $ROM_NAME Aonly
          
      
        - name: Zipping Aonly
