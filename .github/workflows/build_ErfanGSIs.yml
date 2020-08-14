@@ -8,7 +8,7 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip
+  ROM_URL: https://oxygenos.oneplus.net/OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip
   ROM_NAME: OxygenOS
   ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
@@ -47,9 +47,7 @@ jobs:
       
      
        - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip
-       - name: deleting the required files
-         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos && sudo rm -r oos/system/app/EngineeringMode    
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip    
        - name: cloning ext4extract in erfangsis
          run: cd ErfanGSIs && git clone https://github.com/123ridhin/ext4extract.git 
        - name: moving to ext4extract
