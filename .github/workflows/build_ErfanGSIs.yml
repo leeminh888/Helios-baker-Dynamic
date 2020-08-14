@@ -12,6 +12,7 @@ env:
   ROM_NAME: OxygenOS
   ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
+  MIR_INFO: gof
 
 jobs:
   build:
@@ -48,10 +49,11 @@ jobs:
      
        - name: using dynamic.sh 
          run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip    
-       
+       - name: mounting the system.img
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
        - name: using make.sh 
-         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/ext4extract/system_new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/ext4extract/system_new $ROM_NAME Aonly
+         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME Aonly
          
      
        - name: Zipping Aonly
@@ -63,7 +65,7 @@ jobs:
        - name: uploading Aonly.zip
          run: |    
               curl -sL https://git.io/file-transfer | sh
-              ./transfer gof ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z 
+              ./transfer $MIR_INFO ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z 
                        
        - name: Zipping AB
          run: |
@@ -71,11 +73,11 @@ jobs:
               
        - name: uploading AB.zip
          run: |
-              ./transfer gof ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z      
+              ./transfer $MIR_INFO ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z      
               
        - name: Upload Build Informations and Baked:)
          run: |
-              ./transfer gof ErfanGSIs/out/*-Aonly-*.txt
+              ./transfer $MIR_INFO ErfanGSIs/out/*-Aonly-*.txt
          
 
                                                   
