@@ -46,26 +46,10 @@ jobs:
          run: sudo wget $ROM_URL -P ErfanGSIs
       
      
-       - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip    
-       - name: cloning ext4extract in erfangsis
-         run: cd ErfanGSIs && git clone https://github.com/123ridhin/ext4extract.git 
-       - name: moving to ext4extract
-         run: cd ErfanGSIs && sudo mv cache/system.img ext4extract
-       - name: making outputfile
-         run: cd ErfanGSIs/ext4extract && sudo mkdir outputfile
-       - name: runninng the script
-         run: cd ErfanGSIs/ext4extract && sudo python3 ext4extract.py -D outputfile system.img
-       - name: add prep 1
-         run: cd ErfanGSIs/ext4extract && ls && sudo mount -o ro system.img outputfile
-       - name: sudo su
-         run: sudo su 
-       - name: add prep 2
-         run: cd ErfanGSIs/ext4extract && dd if=/dev/zero of=system_new.img bs=4k count=1048576 && mkfs.ext4 system_new.img && tune2fs -c0 -i0 system_new.img            
-       - name: add pep3
-         run: cd ErfanGSIs/ext4extract && sudo mkdir system_new && sudo mount -o loop system_new.img system_new
-       - name: final command
-         run: cd ErfanGSIs/ext4extract && sudo cp -v -r -p outputfile/* system_new/ && sync  
+       - name: using dynamic.sh 
+         run: sudo ./ErfanGSIs/dynamic.sh ErfanGSIs/OnePlus7TProOxygen_14.O.18_OTA_018_all_2007240042_1048f352a9dc472b.zip    
+       
+       
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/ext4extract/system_new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/ext4extract/system_new $ROM_NAME Aonly
          
