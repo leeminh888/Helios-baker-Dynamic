@@ -47,7 +47,9 @@ jobs:
       
      
        - name: using zip2img.sh 
-         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip  
+         run: sudo ./ErfanGSIs/zip2img.sh ErfanGSIs/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_b6c821aba28145e8.zip
+       - name: deleting the required files
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos && sudo rm -r oos/system/app/EngineeringMode    
        - name: cloning ext4extract in erfangsis
          run: cd ErfanGSIs && git clone https://github.com/123ridhin/ext4extract.git 
        - name: moving to ext4extract
