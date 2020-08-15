@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: OxygenOSOPNord-Helios
+  ROM_URL: https://dl.google.com/developers/android/rvc/images/factory/sargo-rpb3.200720.005-factory-e24a8a81.zip
+  ROM_NAME: Pixel
+  ZIP_NAME: Pixel-Helios
   TZ: Middle-East/Kuwait
   MIR_INFO: gof
 
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus8Oxygen_15_OTA_0030_all_2008081530_4dc587d23b294492.zip    
+         run: cd ErfanGSIs && sudo ./dynamic.sh Pixel sargo-rpb3.200720.005-factory-e24a8a81.zip    
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
