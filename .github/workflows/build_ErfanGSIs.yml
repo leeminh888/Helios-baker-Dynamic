@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://oxygenos.oneplus.net/OnePlus8Oxygen_15_OTA_0030_all_2008081530_4dc587d23b294492.zip
-  ROM_NAME: Generic:OxygenOS
-  ZIP_NAME: OxygenOSOP8-Helios
+  ROM_URL: https://oxygenos.oneplus.net/NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: OxygenOSOPNord-Helios
   TZ: Middle-East/Kuwait
   MIR_INFO: gof
 
