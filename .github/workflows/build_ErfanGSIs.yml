@@ -84,7 +84,7 @@ jobs:
               
        - name: Upload Build Informations and Baked:)
          run: |
-              ./transfer $MIR_INFO ErfanGSIs/out/*-Aonly-*.txt
+              ./transfer $MIR_NAME2 ErfanGSIs/out/*-Aonly-*.txt
          
 
                                                   
