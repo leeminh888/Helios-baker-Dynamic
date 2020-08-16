@@ -49,7 +49,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip    
+         run: cd ErfanGSIs && sudo ./md.sh OxygenOS NordOxygen_14_OTA_005_all_2007312151_d1f7295e1ae8422e.zip    
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
