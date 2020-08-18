@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus7TOxygen/OnePlus7TOxygen_13.Y.07_GLO_007_2007291753/OnePlus7TOxygen_13.Y.07_OTA_007_all_2007291753_be3a.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: OxygenOS-Helios
+  ROM_URL: https://netcologne.dl.sourceforge.net/project/xiaomi-eu-multilang-miui-roms/xiaomi.eu/MIUI-WEEKLY-RELEASES/20.8.13/xiaomi.eu_multi_HMK20ProMI9TPro_20.8.13_v12-10.zip
+  ROM_NAME: MIUI
+  ZIP_NAME: MIUI-Helios
   TZ: Middle-East/Kuwait
   MIR_NAME1: gof
   MIR_NAME2: wet
@@ -49,9 +49,9 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./md.sh OxygenOS OnePlus7TOxygen_13.Y.07_OTA_007_all_2007291753_be3a.zip    
+         run: cd ErfanGSIs && sudo ./DynamicXiaomi.sh MIUI xiaomi.eu_multi_HMK20ProMI9TPro_20.8.13_v12-10.zip    
        - name: mounting the system.img
-         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount systemready.img oos
        
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME Aonly
