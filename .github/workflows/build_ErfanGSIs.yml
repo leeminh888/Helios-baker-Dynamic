@@ -51,7 +51,7 @@ jobs:
        - name: using dynamic.sh 
          run: cd ErfanGSIs && sudo ./md.sh Pixel sargo-qq3a.200805.001-factory-a1d05d06.zip    
        - name: mounting the system.img
-         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount systemready.img oos
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME Aonly
