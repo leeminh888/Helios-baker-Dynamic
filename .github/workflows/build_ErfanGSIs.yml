@@ -8,7 +8,7 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://dl.google.com/dl/android/aosp/sargo-qq3a.200805.001-factory-a1d05d06.zip
+  ROM_URL: https://dl.google.com/developers/android/rvc/images/factory/bonito-rpb3.200720.005-factory-86b7230a.zip
   ROM_NAME: Pixel
   ZIP_NAME: Pixel-Helios
   TZ: Middle-East/Kuwait
@@ -49,7 +49,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./md.sh Pixel sargo-qq3a.200805.001-factory-a1d05d06.zip    
+         run: cd ErfanGSIs && sudo ./md.sh Pixel bonito-rpb3.200720.005-factory-86b7230a.zip
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
