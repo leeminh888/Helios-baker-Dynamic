@@ -60,7 +60,7 @@ jobs:
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/out
-              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/out/*-Aonly-*.img
+              zip -r ErfanGSIs/out/$ZIP_NAME-HeliosGSIs-Aonly.7z ErfanGSIs/out/*-Aonly-*.img
              
        - name: uploading Aonly.zip
          run: |    
@@ -69,7 +69,7 @@ jobs:
                        
        - name: Zipping AB
          run: |
-              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z ErfanGSIs/out/*-AB-*.img
+              zip -r ErfanGSIs/out/$ZIP_NAME-HeliosGSIs-AB.7z ErfanGSIs/out/*-AB-*.img
               
        - name: uploading AB.zip
          run: |
