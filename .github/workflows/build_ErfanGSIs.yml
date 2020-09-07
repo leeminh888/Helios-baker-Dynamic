@@ -65,7 +65,7 @@ jobs:
        - name: uploading Aonly.zip
          run: |    
               curl -sL https://git.io/file-transfer | sh
-              ./transfer $MIR_NAME1 ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z 
+              ./transfer $MIR_NAME1 ErfanGSIs/out/$ZIP_NAME-HeliosGSIs-Aonly.7z 
                        
        - name: Zipping AB
          run: |
@@ -73,7 +73,7 @@ jobs:
               
        - name: uploading AB.zip
          run: |
-              ./transfer $MIR_NAME1 ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z   
+              ./transfer $MIR_NAME1 ErfanGSIs/out/$ZIP_NAME-HeliosGSIs-AB.7z   
           
               
        - name: Upload Build Informations and Baked:)
