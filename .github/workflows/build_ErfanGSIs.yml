@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: http://tdrive.manofuranium.workers.dev/OnePlus7TProOxygen_13.W.07_OTA_007_all_2007291719_127dd04e.zip
-  ROM_NAME: Pixel
-  ZIP_NAME: ZenUI-Helios
+  ROM_URL: http://tdrive.manofuranium.workers.dev/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_98ec89185ebd.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: OxygenOS7T-Helios
   TZ: Middle-East/Kuwait
   MIR_NAME1: wet
 
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./md.sh Pixel UL-I002D-WW-29.12.18.12-user.zip
+         run: cd ErfanGSIs && sudo ./md.sh OxygenOS OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_98ec89185ebd.zip
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
