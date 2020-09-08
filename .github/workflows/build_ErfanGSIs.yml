@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./md.sh OxygenOS OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_98ec89185ebd.zip
+         run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_98ec89185ebd.zip
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
