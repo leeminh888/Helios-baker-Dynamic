@@ -8,7 +8,7 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus7TProOxygen/OnePlus7TProOxygen_13.W.07_GLO_007_2007291719/OnePlus7TProOxygen_13.W.07_OTA_007_all_2007291719_127dd04e.zip
+  ROM_URL: http://tdrive.manofuranium.workers.dev/OnePlus7TProOxygen_13.W.07_OTA_007_all_2007291719_127dd04e.zip
   ROM_NAME: OxygenOS
   ZIP_NAME: OxygenOS-Helios
   TZ: Middle-East/Kuwait
