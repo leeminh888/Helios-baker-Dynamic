@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: http://tdrive.manofuranium.workers.dev/OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_98ec89185ebd.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: OxygenOS7T-Helios
+  ROM_URL: https://dl.google.com/dl/android/aosp/coral-rp1a.200720.009-factory-dac149ce.zip
+  ROM_NAME: Pixel
+  ZIP_NAME: Pixel-Helios
   TZ: Middle-East/Kuwait
   MIR_NAME1: wet
 
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus7TOxygen_13.W.07_OTA_007_all_2007291753_98ec89185ebd.zip
+         run: cd ErfanGSIs && sudo ./dynamic.sh Pixel coral-rp1a.200720.009-factory-dac149ce.zip
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
