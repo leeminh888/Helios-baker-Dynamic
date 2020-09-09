@@ -8,7 +8,7 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://dl.google.com/dl/android/aosp/sunfish-rp1a.200720.011-factory-1a38c5a6.zip
+  ROM_URL: https://dl.google.com/dl/android/aosp/coral-rp1a.200720.009-factory-dac149ce.zip
   ROM_NAME: Pixel
   ZIP_NAME: Pixel-Helios
   TZ: Middle-East/Kuwait
@@ -48,7 +48,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./merge.sh Pixel sunfish-rp1a.200720.011-factory-1a38c5a6.zip
+         run: cd ErfanGSIs && sudo ./merge.sh Pixel coral-rp1a.200720.009-factory-dac149ce.zip
        - name: mounting the system.img
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
