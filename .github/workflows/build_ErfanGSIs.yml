@@ -34,7 +34,6 @@ jobs:
               sudo apt-get install -y simg2img
               sudo apt-get install python-pip
               sudo apt-get install python3-pip
-              pip install pyrogram tgcrypto
       
        - name: processing ErfanGSIs code 
          run: git clone --recurse-submodules https://github.com/issacabraham-git/ErfanGSIs.git
@@ -52,7 +51,7 @@ jobs:
        - name: using dynamic.sh 
          run: cd ErfanGSIs && sudo ./merge.sh Pixel coral-rp1a.200720.009-factory-dac149ce.zip
        - name: mounting the system.img
-         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount -o ro system.img oos
        
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME Aonly
