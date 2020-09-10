@@ -49,7 +49,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./dynamic.sh Pixel sunfish-rp1a.200720.011-factory-1a38c5a6.zip
+         run: cd ErfanGSIs && sudo ./merge.sh Pixel sunfish-rp1a.200720.011-factory-1a38c5a6.zip
        
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/system-new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/system-new $ROM_NAME Aonly
