@@ -54,7 +54,7 @@ jobs:
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
        
        - name: using make.sh 
-         run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
+         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/oos $ROM_NAME Aonly
          
      
        - name: Zipping Aonly
