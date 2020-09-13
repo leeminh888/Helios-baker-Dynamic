@@ -49,8 +49,8 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./dynamicmiui.sh miui_CMIGlobal_V12.1.2.0.RJAMIXM_ef34b27a92_11.0.zip
-       
+         run: cd ErfanGSIs && sudo ./dyn11.sh Pixel sunfish-rp1a.200720.011-factory-1a38c5a6.zip
+     
        - name: using make.sh 
          run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/system-new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/system-new $ROM_NAME Aonly
          
