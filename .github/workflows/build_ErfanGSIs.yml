@@ -8,9 +8,9 @@ on:
       types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V12.1.2.0.RJAMIXM/miui_CMIGlobal_V12.1.2.0.RJAMIXM_ef34b27a92_11.0.zip
-  ROM_NAME: MIUI
-  ZIP_NAME: MIUI-Helios
+  ROM_URL: https://dl.google.com/dl/android/aosp/sunfish-rp1a.200720.011-factory-1a38c5a6.zip
+  ROM_NAME: Pixel
+  ZIP_NAME: Pixel-Helios
   TZ: Middle-East/Kuwait
   MIR_NAME1: wet
 
@@ -36,7 +36,7 @@ jobs:
               sudo apt-get install python3-pip
       
        - name: processing ErfanGSIs code 
-         run: git clone --recurse-submodules https://github.com/issacabraham-git/ErfanGSIs.git
+         run: git clone --recurse-submodules https://github.com/123ridhin/ErfanGSIs.git
        
        - name: Setting up requirements and permissions
          run: |
