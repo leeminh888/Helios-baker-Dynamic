@@ -50,34 +50,36 @@ jobs:
      
        - name: using dynamic.sh 
          run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus7TProOxygen_13.W.08_OTA_008_all_2009072125_7c0d51f3cf.zip
-     
-       - name: using make.sh 
-         run: sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/system-new $ROM_NAME AB && sudo ./ErfanGSIs/make.sh ErfanGSIs/cache/system-new $ROM_NAME Aonly
+       - name: Mounting 
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
+      
+       - name: using url2GSI 
+         run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
          
      
        - name: Zipping Aonly
          run: |
               mkdir final
-              sudo chmod -R 777 ErfanGSIs/out
+              sudo chmod -R 777 ErfanGSIs/output
               zip -r ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/out/*-Aonly-*.img
              
        - name: uploading Aonly.zip
          run: |    
               curl -sL https://git.io/file-transfer | sh
-              ./transfer $MIR_NAME1 ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z 
+              ./transfer $MIR_NAME1 ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z 
                        
        - name: Zipping AB
          run: |
-              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z ErfanGSIs/out/*-AB-*.img
+              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z ErfanGSIs/output/*-AB-*.img
               
        - name: uploading AB.zip
          run: |
-              ./transfer $MIR_NAME1 ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z   
+              ./transfer $MIR_NAME1 ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z   
           
               
        - name: Upload Build Informations and Baked:)
          run: |
-              ./transfer $MIR_NAME1 ErfanGSIs/out/*-Aonly-*.txt
+              ./transfer $MIR_NAME1 ErfanGSIs/output/*-Aonly-*.txt
          
 
                                                   
