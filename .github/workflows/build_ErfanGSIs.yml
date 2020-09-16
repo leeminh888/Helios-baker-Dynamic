@@ -61,7 +61,7 @@ jobs:
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
-              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/out/*-Aonly-*.img
+              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
              
        - name: uploading Aonly.zip
          run: |    
