@@ -49,7 +49,7 @@ jobs:
       
      
        - name: using dynamic.sh 
-         run: cd ErfanGSIs && sudo ./dynamic.sh OxygenOS OnePlus7TProOxygen_13.W.08_OTA_008_all_2009072125_7c0d51f3cf.zip
+         run: cd ErfanGSIs && sudo ./merge.sh OxygenOS OnePlus7TProOxygen_13.W.08_OTA_008_all_2009072125_7c0d51f3cf.zip
        - name: Mounting 
          run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
       
@@ -61,7 +61,7 @@ jobs:
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
-              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
+              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-Aonly.7z ErfanGSIs/output/*-Aonly-*.img
              
        - name: uploading Aonly.zip
          run: |    
@@ -70,7 +70,7 @@ jobs:
                        
        - name: Zipping AB
          run: |
-              zip -r ErfanGSIs/out/$ZIP_NAME-GSI-AB.7z ErfanGSIs/output/*-AB-*.img
+              zip -r ErfanGSIs/output/$ZIP_NAME-GSI-AB.7z ErfanGSIs/output/*-AB-*.img
               
        - name: uploading AB.zip
          run: |
