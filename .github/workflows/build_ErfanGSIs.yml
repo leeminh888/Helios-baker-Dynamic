@@ -51,7 +51,7 @@ jobs:
        - name: using dynamic.sh 
          run: cd ErfanGSIs && sudo ./merge.sh OxygenOS OnePlus7TProOxygen_13.W.08_OTA_008_all_2009072125_7c0d51f3cf.zip
        - name: Mounting 
-         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount system.img oos
+         run: cd ErfanGSIs/cache && sudo mkdir oos && sudo mount -o ro system.img oos
       
        - name: using url2GSI 
          run: sudo ./ErfanGSIs/url2GSI.sh ErfanGSIs/cache/oos $ROM_NAME
